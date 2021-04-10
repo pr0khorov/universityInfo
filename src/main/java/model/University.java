@@ -60,7 +60,7 @@ public class University {
 
     @Override
     public String toString() {
-        return String.format("id = %s, fullName = %s, stortName = %s, yearOfFoundation = %s, mainProfile = %s",
+        return String.format("id = %s, fullName = %s, shortName = %s, yearOfFoundation = %s, mainProfile = %s",
                 this.id,
                 this.fullName,
                 this.shortName,
