@@ -3,10 +3,13 @@ import comparator.UniversityComparator;
 import enums.StudentComparatorType;
 import enums.UniversityComparatorType;
 import io.XlsReader;
+import io.XlsWriter;
+import model.Statistics;
 import model.Student;
 import model.University;
 import util.ComparatorUtil;
 import util.JsonUtil;
+import util.StatisticsUtil;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,5 +57,8 @@ public class Boot {
             // проверяем, что обратно элемент воссоздаётся
             System.out.println(studentFromJson);
         });
+
+        List<Statistics> statisticsList = StatisticsUtil.createStatistics(students, universities);
+        XlsWriter.writeXlsStatistics(statisticsList, "statistics.xlsx");
     }
 }
