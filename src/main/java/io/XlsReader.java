@@ -23,7 +23,7 @@ public class XlsReader {
     private XlsReader() {
     }
 
-    public static List<University> readXlsUniversities(String filePath) throws IOException {
+    public static List<University> readXlsUniversities(String filePath) {
 
         List<University> universities = new ArrayList<>();
 
@@ -52,13 +52,14 @@ public class XlsReader {
 
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Excel reading failed", e);
+            return universities;
         }
 
         logger.log(Level.INFO, "Excel reading finished successfully");
         return universities;
     }
 
-    public static List<Student> readXlsStudents(String filePath) throws IOException {
+    public static List<Student> readXlsStudents(String filePath) {
 
         List<Student> students = new ArrayList<>();
 
@@ -85,6 +86,7 @@ public class XlsReader {
 
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Excel reading failed", e);
+            return students;
         }
 
         logger.log(Level.INFO, "Excel reading finished successfully");

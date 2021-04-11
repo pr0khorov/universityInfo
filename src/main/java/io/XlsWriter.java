@@ -72,6 +72,7 @@ public class XlsWriter {
             workbook.write(outputStream);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "New excel file writing failed", e);
+            return;
         }
 
         logger.log(Level.INFO, "Excel writing finished successfully");
