@@ -2,12 +2,24 @@ package model;
 
 import enums.StudyProfile;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 public class Statistics {
 
+    @XmlElement(name = "universityProfile")
     private StudyProfile profile;
+
+    @XmlElement(name = "avgScore")
     private float avgExamScore;
+
+    @XmlTransient
     private int numberOfStudents;
+
+    @XmlTransient
     private int numberOfUniversities;
+
+    @XmlTransient
     private String universityNames;
 
     public StudyProfile getProfile() {
